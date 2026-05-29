@@ -1,38 +1,84 @@
-# Miscellaneous
-*.class
-*.log
-*.pyc
-*.swp
+# =========================
+# OS FILES
+# =========================
 .DS_Store
-.atom/
-.build/
-.buildlog/
-.history
-.svn/
+Thumbs.db
 
-# IntelliJ
-*.iml
-.idea/
-
-# VS Code
+# =========================
+# IDE / EDITORS
+# =========================
 .vscode/
+.idea/
+*.iml
 
-# Flutter/Dart
+# =========================
+# LOGS
+# =========================
+*.log
+
+# =========================
+# NODE / FRONTEND (if used)
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =========================
+# FLUTTER / DART
+# =========================
 .dart_tool/
 .flutter-plugins
 .flutter-plugins-dependencies
 .packages
 .pub/
 build/
+.flutter-*.json
 
-# Android
+# =========================
+# ANDROID
+# =========================
 .gradle/
 local.properties
 *.jks
+*.keystore
 
-# iOS
+# =========================
+# IOS
+# =========================
 Pods/
 DerivedData/
+*.xcuserstate
 
-# Coverage
-coverage/
+# =========================
+# PYTHON (AI / scripts)
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+
+# =========================
+# AI / GENERATED OUTPUT (IMPORTANT)
+# =========================
+ai_generated/
+generated/
+output/
+dist/
+temp/
+tmp/
+
+# AI model files (optional safety)
+*.h5
+*.pt
+*.onnx
+*.pkl
+
+# =========================
+# ENV FILES (VERY IMPORTANT)
+# =========================
+.env
+.env.*
+!.env.example
