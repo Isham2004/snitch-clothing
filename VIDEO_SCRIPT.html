@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Snitch Clothing — Video Demonstration Script</title>
+<style>
+  @page { size: A4; margin: 20mm 18mm; }
+  :root { --primary:#1565C0; --primary-dark:#0D47A1; --accent:#42A5F5; --divider:#E2E8F0; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12pt; line-height: 1.5; color:#111; margin:0; background:#f0f0f0;
+  }
+  .page { background:#fff; width:210mm; min-height:297mm; padding:20mm 18mm; margin:12mm auto; box-shadow:0 2px 12px rgba(0,0,0,.15); }
+  h1,h2,h3 { font-family:"Times New Roman",Times,serif; color:var(--primary-dark); page-break-after:avoid; }
+  h1 { font-size:20pt; margin:0 0 4pt; }
+  h2 { font-size:14pt; margin:16pt 0 6pt; border-bottom:1.5pt solid var(--primary); padding-bottom:3pt; }
+  h3 { font-size:12.5pt; margin:10pt 0 3pt; color:var(--primary); }
+  p { margin:0 0 6pt; }
+  .sub { color:#4A5568; font-size:12pt; margin:0 0 14pt; font-style:italic; }
+  .meta { font-size:11pt; color:#4A5568; margin-bottom:10pt; }
+  .seg {
+    border:0.75pt solid var(--divider); border-left:3pt solid var(--primary);
+    background:#f5f8fc; padding:8pt 12pt; margin:0 0 10pt; page-break-inside:avoid;
+  }
+  .seg .head { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:3pt; }
+  .seg .title { font-weight:bold; color:var(--primary-dark); font-size:12.5pt; }
+  .seg .time { font-size:10.5pt; color:#fff; background:var(--primary); padding:1pt 8pt; border-radius:10pt; white-space:nowrap; }
+  .label { font-weight:bold; color:var(--primary); }
+  .say { margin:3pt 0; }
+  .say::before { content:"\201C"; }
+  .say::after { content:"\201D"; }
+  .do { font-size:11pt; color:#4A5568; margin:3pt 0; }
+  .do::before { content:"\25B6  ACTION: "; font-weight:bold; color:var(--accent); font-size:9.5pt; }
+  table { width:100%; border-collapse:collapse; margin:6pt 0 10pt; font-size:11pt; page-break-inside:avoid; }
+  th,td { border:0.75pt solid var(--divider); padding:4pt 7pt; text-align:left; vertical-align:top; }
+  th { background:var(--primary); color:#fff; }
+  tr:nth-child(even) td { background:#f5f8fc; }
+  code { font-family:Consolas,"Courier New",monospace; font-size:10.5pt; background:#eef2f8; padding:1pt 3pt; border-radius:2pt; }
+  .tip { font-size:10.5pt; color:#4A5568; }
+  .page-break { page-break-before:always; }
+  .print-bar { position:fixed; top:0; left:0; right:0; background:var(--primary-dark); color:#fff; padding:8px 16px; font-family:Arial,sans-serif; font-size:13px; z-index:999; text-align:center; }
+  .print-bar button { background:#fff; color:var(--primary-dark); border:none; padding:5px 14px; margin-left:10px; border-radius:4px; font-weight:bold; cursor:pointer; }
+  @media print { body{background:#fff;} .page{width:auto;min-height:0;margin:0;padding:0;box-shadow:none;} .no-print{display:none;} }
+</style>
+</head>
+<body>
+
+<div class="print-bar no-print">
+  Video demonstration script (3–5 min). Use <strong>Print → Save as PDF</strong> to export.
+  <button onclick="window.print()">Print / Save as PDF</button>
+</div>
+
+<section class="page">
+  <h1>Snitch Clothing — Video Demonstration Script</h1>
+  <p class="sub">Cross-platform fashion e-commerce app · Flutter + Firebase</p>
+  <p class="meta">Target length: <strong>3–5 minutes</strong> &nbsp;|&nbsp; Format: screen recording of the app on device/emulator with voice-over &nbsp;|&nbsp; Version 1.0.0</p>
+
+  <h2>How to use this script</h2>
+  <p>Each block below is one segment of the video. The <span class="label">spoken line</span> (in quotes) is what you say to camera or as voice-over; the <span style="color:var(--accent);font-weight:bold;">ACTION</span> line tells you what to do on screen at that moment. Times are cumulative targets — aim for the middle of the range so you land around 4 minutes total.</p>
+
+  <table>
+    <thead><tr><th style="width:8%">#</th><th>Segment</th><th style="width:22%">Time (cumulative)</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Student introduction</td><td>0:00 – 0:25</td></tr>
+      <tr><td>2</td><td>Application overview</td><td>0:25 – 1:00</td></tr>
+      <tr><td>3</td><td>Login / Register</td><td>1:00 – 1:40</td></tr>
+      <tr><td>4</td><td>Product browsing</td><td>1:40 – 2:25</td></tr>
+      <tr><td>5</td><td>Cart and Checkout</td><td>2:25 – 3:10</td></tr>
+      <tr><td>6</td><td>Order history</td><td>3:10 – 3:35</td></tr>
+      <tr><td>7</td><td>Firebase integration</td><td>3:35 – 4:20</td></tr>
+      <tr><td>8</td><td>Run on device / emulator + closing</td><td>4:20 – 4:45</td></tr>
+    </tbody>
+  </table>
+
+  <p class="tip"><strong>Before you record:</strong> sign out of the app so you can show the login flow fresh; have one test account ready (email + password) for a fast login; make sure the device has internet so Firestore loads live; open the Firebase Console in a browser tab for segment 7.</p>
+
+  <h2>Segment 1 — Student Introduction</h2>
+  <div class="seg">
+    <div class="head"><span class="title">On camera (or voice-over on title slide)</span><span class="time">0:00 – 0:25</span></div>
+    <p class="say">Hi, my name is [YOUR NAME], student ID [YOUR ID]. This is my project demonstration for Snitch Clothing — a cross-platform fashion e-commerce mobile application I built using Flutter and Firebase. In the next few minutes I'll walk you through the app's main features and show it running live on a real device.</p>
+    <p class="do">Show your face or a title slide with the project name, your name, and student ID. Then cut to the device screen.</p>
+  </div>
+
+  <h2>Segment 2 — Application Overview</h2>
+  <div class="seg">
+    <div class="head"><span class="title">Splash screen + spoken summary</span><span class="time">0:25 – 1:00</span></div>
+    <p class="say">Snitch Clothing is a complete online fashion store. It's written in a single Flutter codebase that runs on Android, iOS, web, and desktop, and it uses Firebase for the backend — Firebase Authentication for accounts, Cloud Firestore for the database, and Cloud Storage for profile photos. The app covers the full shopping journey: sign up and log in, browse and search products, add items to a cart, check out, and track your orders — all synced in real time across devices, with no custom server code.</p>
+    <p class="do">Launch the app so the animated splash screen plays. Briefly show the Home screen with its banner carousel, category strip, and product grid so the viewer sees the polished UI.</p>
+  </div>
+
+  <h2>Segment 3 — Login / Register</h2>
+  <div class="seg">
+    <div class="head"><span class="title">Register a new account</span><span class="time">1:00 – 1:25</span></div>
+    <p class="say">First, authentication. New users can register with an email and password. The form validates each field, and accepting the terms is required. When I submit, Firebase Authentication creates the account and the app writes a user profile document into Firestore.</p>
+    <p class="do">On the Register screen, type a name, email, and password, toggle the password-visibility icon, tick the terms checkbox, and tap Register. Show the app landing on the Home tab.</p>
+  </div>
+  <div class="seg">
+    <div class="head"><span class="title">Login + password reset + persistence</span><span class="time">1:25 – 1:40</span></div>
+    <p class="say">Existing users simply log in. If you forget your password, the "Forgot Password" dialog sends a reset email through Firebase. And because the session persists, the next time you open the app it skips the login screen entirely.</p>
+    <p class="do">Sign out, then sign back in with your test account. Briefly open the "Forgot Password" dialog to show it, then cancel. Optionally close and reopen the app to show it stays logged in.</p>
+  </div>
+
+  <h2>Segment 4 — Product Browsing</h2>
+  <div class="seg">
+    <div class="head"><span class="title">Home, categories, search</span><span class="time">1:40 – 2:05</span></div>
+    <p class="say">All products load live from Firestore. The Home screen shows a banner carousel, featured products, and new arrivals. I can filter by category, and the search bar matches across product name, brand, category, and description.</p>
+    <p class="do">Scroll the Home screen. Tap a category chip to filter. Open the search and type a query (e.g. a product or brand name) to show live filtering of results.</p>
+  </div>
+  <div class="seg">
+    <div class="head"><span class="title">Shop screen + product detail</span><span class="time">2:05 – 2:25</span></div>
+    <p class="say">The Shop screen lets me sort by price or rating and switch between grid and list views. Opening a product shows a swipeable image gallery, the price with any sale discount, and selectors for size and colour before adding to the cart.</p>
+    <p class="do">Open the Shop tab, change the sort dropdown, toggle grid/list. Tap a product to open its detail screen; swipe the image gallery and select a size and a colour.</p>
+  </div>
+
+  <h2>Segment 5 — Cart and Checkout</h2>
+  <div class="seg">
+    <div class="head"><span class="title">Add to cart + manage cart</span><span class="time">2:25 – 2:50</span></div>
+    <p class="say">I'll add this item to the cart. The cart badge updates instantly. In the cart I can change quantities, swipe to delete an item, and the subtotal recalculates live — shipping is free over one hundred dollars.</p>
+    <p class="do">On the product detail screen tap "Add to Cart" (show the confirmation snackbar). Open the Cart tab; tap the +/- steppers to change quantity and swipe one item to delete it. Point out the updating subtotal.</p>
+  </div>
+  <div class="seg">
+    <div class="head"><span class="title">Checkout wizard</span><span class="time">2:50 – 3:10</span></div>
+    <p class="say">Checkout is a three-step wizard: delivery details, payment method, then a review of the full order. When I place the order, it's written to Firestore, the cart clears, and I'm taken straight to my order history.</p>
+    <p class="do">Tap "Proceed to Checkout". Walk through Delivery → Payment → Review, then tap Place Order. Show the success dialog.</p>
+  </div>
+
+  <h2>Segment 6 — Order History</h2>
+  <div class="seg">
+    <div class="head"><span class="title">Orders screen</span><span class="time">3:10 – 3:35</span></div>
+    <p class="say">The order I just placed appears immediately in my order history with a "Confirmed" status. Each card expands to show the items, delivery address, payment method, and a tracking timeline. Because this is driven by a live Firestore stream, any status change from the backend would update here automatically.</p>
+    <p class="do">On the Orders screen, point to the new order. Tap to expand it and scroll through the item list, address, and tracking steps.</p>
+  </div>
+
+  <h2>Segment 7 — Firebase Integration</h2>
+  <div class="seg">
+    <div class="head"><span class="title">Show the live backend in the Firebase Console</span><span class="time">3:35 – 4:20</span></div>
+    <p class="say">To prove this is all real and live, here's the Firebase Console for the project. In Authentication you can see the account I registered. In Cloud Firestore, the <code>users</code> collection holds my profile, the <code>carts</code> collection held my items, and the order I just placed is in both my private <code>users/{uid}/orders</code> subcollection and the top-level <code>orders</code> collection. Profile photos go to Cloud Storage. Security rules make sure each user can only read and write their own data.</p>
+    <p class="do">Switch to the browser. Open the Firebase Console → Authentication (show the user). Open Firestore Database and click through <code>products</code>, <code>users</code>, and <code>orders</code> to show the document you just created. Optionally show the Rules tab and the Storage <code>avatars/</code> folder.</p>
+    <p class="tip">Tip: have the order's Firestore document open and refresh it right after placing the order in segment 5, so the viewer sees it appear.</p>
+  </div>
+
+  <h2>Segment 8 — Running on Device / Emulator + Closing</h2>
+  <div class="seg">
+    <div class="head"><span class="title">Confirm it's running live, then sign off</span><span class="time">4:20 – 4:45</span></div>
+    <p class="say">Everything you've seen is the app running on a real Android device, built and installed from the Flutter project with <code>flutter run</code>. To sum up: Snitch Clothing is a complete Flutter and Firebase e-commerce app with authentication, live product browsing, a real-time cart and checkout, order history, and secure per-user data — all from a single codebase. Thank you for watching.</p>
+    <p class="do">Briefly show the physical device in frame (or the emulator window) to confirm it's live. End on the title slide or the app's Home screen.</p>
+  </div>
+
+  <h2>Recording checklist</h2>
+  <table>
+    <thead><tr><th style="width:60%">Item</th><th>Done</th></tr></thead>
+    <tbody>
+      <tr><td>App signed out before recording (to demo register/login fresh)</td><td>☐</td></tr>
+      <tr><td>Test account credentials ready for fast login</td><td>☐</td></tr>
+      <tr><td>Device/emulator online so Firestore loads</td><td>☐</td></tr>
+      <tr><td>Firebase Console open in a browser tab (Auth + Firestore)</td><td>☐</td></tr>
+      <tr><td>Screen recorder + microphone tested, audio clear</td><td>☐</td></tr>
+      <tr><td>Title slide prepared (name, student ID, project)</td><td>☐</td></tr>
+      <tr><td>Final video between 3 and 5 minutes</td><td>☐</td></tr>
+    </tbody>
+  </table>
+</section>
+
+</body>
+</html>

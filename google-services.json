@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "464023817804",
+    "project_id": "snitch-clothing",
+    "storage_bucket": "snitch-clothing.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:464023817804:android:f27a0bc63bfeeef598eee9",
+        "android_client_info": {
+          "package_name": "com.isham.snitchclothing"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNKwI9CKCNbAf9bgBksdXXVqTvHPPqB6M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
